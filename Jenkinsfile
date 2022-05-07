@@ -3,8 +3,7 @@ pipeline {
     stages {
 
         stage('Clone Repo') {
-          steps {
-            sh 'sudo su -'  
+          steps {           
             sh 'rm -rf pipelinetesting_master'
             sh 'rm -rf pipelinetesting'
             sh 'git clone https://github.com/akhildadnu/pipelinetesting.git'
@@ -14,7 +13,7 @@ pipeline {
         stage('Build Docker Image') {
           steps {
             sh 'cd /var/lib/jenkins/workspace/pipelinetesting_master'
-            sh 'docker build -t sreeharshav/pipelinetestmaster:v1 .'
+            sh 'sudo docker build -t sreeharshav/pipelinetestmaster:v1 .'
             }
         }
 
