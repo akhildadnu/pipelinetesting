@@ -19,14 +19,14 @@ pipeline {
 
         stage('Push Image to Docker Hub') {
           steps {
-           sh    'docker push akhildandu/pipelinetestmaster:v2'
+           sh    'docker push akhildandu/akhildandu:v1'
            }
         }
 
         stage('Deploy to Docker Host') {
           steps {
             sh    'docker -H tcp://10.0.28.151:2375 stop masterwebapp1 || true'
-            sh    'docker -H tcp://10.0.28.151:2375 run --rm -dit --name masterwebapp1 --hostname masterwebapp1 -p 8000:80 akhildandu/pipelinetestmaster:v2'
+            sh    'docker -H tcp://10.0.28.151:2375 run --rm -dit --name masterwebapp1 --hostname masterwebapp1 -p 8000:80 akhildandu/akhildandu:v1'
             }
         }
 
