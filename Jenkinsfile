@@ -4,6 +4,7 @@ pipeline {
 
         stage('Clone Repo') {
           steps {
+            sh 'sudo su -'  
             sh 'rm -rf pipelinetesting_master'
             sh 'rm -rf pipelinetesting'
             sh 'git clone https://github.com/akhildadnu/pipelinetesting.git'
