@@ -6,7 +6,7 @@ pipeline {
           steps {
             sh 'rm -rf pipelinetesting_master'
             sh 'rm -rf pipelinetesting'
-            sh 'git clone https://github.com/mavrick202/pipelinetesting.git'
+            sh 'git clone https://github.com/akhildadnu/pipelinetesting.git'
             }
         }
 
